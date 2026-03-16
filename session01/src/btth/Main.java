@@ -6,14 +6,17 @@ public class Main {
     public static void main(String[] args) {
         // 1 nhập bên ngoài và validate bên ngoài sau đó gọi phương thức registerUser
         Scanner sc = new Scanner(System.in);
-        try {
-            String name = inputName(sc);
-            int age = inputAge(sc);
-            String email = inputEmail(sc);
-            registerUser(name, age, email);
-        } catch (InvalidEmailException | InvalidAgeException e) {
-            System.err.println(e.getMessage());
-        }
+        do {
+            try {
+                String name = inputName(sc);
+                int age = inputAge(sc);
+                String email = inputEmail(sc);
+                registerUser(name, age, email);
+            } catch (InvalidEmailException | InvalidAgeException e) {
+                System.err.println(e.getMessage());
+            }
+        } while (true);
+
 
         // 2 truyền vào rồi validate
     }
